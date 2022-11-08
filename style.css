@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+}
+
+:root {
+    --primary-blue: hsl(215, 51%, 70%);
+    --primary-cyan: hsl(178, 100%, 50%);
+
+    --neutral-main-bg: hsl(217, 54%, 11%);
+    --neutral-card-bg: hsl(216, 50%, 16%);
+    --neutral-line: hsl(215, 32%, 27%);
+    --neutral-white: hsl(0, 0%, 100%);
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: var(--neutral-main-bg);
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    width: 282px;
+    background: var(--neutral-card-bg);
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+.card .card-image {
+    position: relative;
+    cursor: pointer;
+}
+
+.card .card-image {
+    background-image: url('./images/image-equilibrium.jpg');
+    background-size: cover;
+    width: 250px;
+    height: 250px;
+    border-radius: .5rem;
+}
+
+.view-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 45px !important;
+    height: 45px !important;
+    visibility: hidden;
+}
+
+.card .card-image:hover > .view-icon {
+    visibility: visible;
+}
+
+.card .card-image:hover {
+    filter: brightness(30%);
+    transition: 1s ease;
+}
+
+.card .card-content {
+    padding-block: 1rem;
+}
+
+.card .card-content > h1 {
+    color: var(--neutral-white);
+    font-size: 1.2rem;
+    padding-bottom: 1rem;
+}
+
+.card .card-content > p {
+    font-size: 1rem;
+    padding-bottom: 1rem;
+    font-weight: 400;
+}
+
+.card .card-content .card-content-info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card .card-content .card-content-info > div {
+    display: flex;
+}
+
+.card .card-content .card-content-info > div > span {
+    margin-left: .5rem;
+}
+
+.card .card-content .card-content-info > div:first-child {
+    color: var(--primary-cyan);
+}
+
+.card .card-profile {
+    display: flex;
+    align-items: center;
+    border-top: 1px solid var(--neutral-line);
+    padding-block: 1rem;
+    color: var(--neutral-white) !important;
+}
+
+.card .card-profile > img {
+    width: 30px;
+    height: 30px;
+    border: 1px solid var(--neutral-white);
+    border-radius: 100%;
+    margin-right: 1rem;
+}
+
+.card .card-profile > span {
+    margin-left: .3rem;
+    color: var(--neutral-white);
+}
+
+.card .card-profile > span:hover,
+.card .card-content > h1:hover {
+    color: var(--primary-cyan);
+    cursor: pointer;
+}
+
+.gray-text {
+    color: var(--neutral-white);
+    opacity: .5;
+}
